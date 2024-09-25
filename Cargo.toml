@@ -1,0 +1,28 @@
+[package]
+name = "mc_sync_tui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+#処理系クレート
+tokio = { version = "1.40.x", features = ["full"] }
+serde = { version = "1.0.x", features = ["derive"] }
+serde_json = { version = "1.0.x", features = [] }
+#TUIクレート
+ratatui = { version = "0.28.x", features = [
+    "crossterm",
+    "serde",
+    "macros",
+    "palette",
+    "all-widgets",
+    "underline-color",
+] }
+crossterm = { version = "0.28.x", features = [
+    "windows",
+    "bracketed-paste",
+    "event-stream",
+    "serde",
+] }
+color-eyre = { version = "0.6.x", features = [] }
+#数学クレート
+ndarray = { version = "0.16.x", features = ["blas", "serde", "docs", "std"] }
